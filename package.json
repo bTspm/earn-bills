@@ -2,6 +2,9 @@
   "name": "earn-bills",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "7"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -10,6 +13,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "axios": "^0.21.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -19,8 +23,18 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --watchAll=false --coverage --ci --reporters=default --reporters=jest-junit --testResultsProcessor=./node_modules/jest-html-reporter",
+    "eject": "react-scripts eject",
+    "format": "prettier --write ./**/*.{ts,tsx,js,json,md}",
+    "lint": "eslint ./ --ext .ts,.tsx,.json",
+    "lint:fix": "eslint ./ --ext .ts,.tsx,.json --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.(ts|tsx|json)": [
+      "npm run format",
+      "npm run lint:fix"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +53,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.25.2",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1"
   }
 }
