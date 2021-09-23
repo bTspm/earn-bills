@@ -9,21 +9,13 @@ const AppContent: FunctionComponent = (): JSX.Element => {
   const { isBillDataLoaded, billData } = useContext(BillDataContext);
 
   if (!isBillDataLoaded) {
-    return (
-      <Typography sx={{ mt: 10 }} align="center">
-        Loading...
-      </Typography>
-    );
+    return <Typography align="center">Loading...</Typography>;
   }
 
   if (billData.length > 0) {
     return <Home />;
   } else {
-    return (
-      <Alert sx={{ mt: 10 }} severity="error">
-        Error...Please try again
-      </Alert>
-    );
+    return <Alert severity="error">Error...Please try again</Alert>;
   }
 };
 
@@ -31,7 +23,7 @@ const App: FunctionComponent = (): JSX.Element => {
   return (
     <BillDataContextProvider>
       <Header />
-      <Container component="main" maxWidth="md">
+      <Container sx={{ mt: 10 }} component="main" maxWidth="md">
         <AppContent />
       </Container>
     </BillDataContextProvider>

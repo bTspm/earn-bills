@@ -18,7 +18,7 @@ const Home: FunctionComponent = (): JSX.Element => {
   }, [billionaire, perHour]);
 
   return (
-    <Card sx={{ mt: 10, p: 3 }}>
+    <Card sx={{ p: 3 }}>
       <BillAutoComplete value={billionaire} setValue={setBillionaire} />
       <PerHourSlider value={perHour} setValue={setPerHour} />
       Just Takes {<Typography fontWeight="bold">{abbreviatedNumber(years)}</Typography>} Years to earn
