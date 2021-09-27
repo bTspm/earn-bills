@@ -43,7 +43,15 @@ const BillAutoComplete: FunctionComponent<BillAutoCompleteProps> = ({ value, set
       filterOptions={filterOptions}
       options={billData}
       renderOption={renderOption}
-      renderInput={(params) => <TextField {...params} label="Billionaire" />}
+      renderInput={(params) => (
+        <TextField
+          {...params}
+          helperText={
+            <Typography variant="caption">Search for billionaire by Name (Bill Gates) or Source (Microsoft)</Typography>
+          }
+          label="Billionaire"
+        />
+      )}
       onChange={(e, data) => setValue(data)}
     />
   );

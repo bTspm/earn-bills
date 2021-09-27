@@ -1,8 +1,9 @@
+import { Box } from "@mui/material";
 import Slider from "@mui/material/Slider";
 import * as React from "react";
 import { FunctionComponent } from "react";
 
-import constants from "../utils/constants";
+import CONSTANTS from "../utils/constants";
 import { abbreviatedCurrency } from "../utils/numbers";
 
 interface PerHourSliderProps {
@@ -10,7 +11,24 @@ interface PerHourSliderProps {
   setValue: (value: number) => void;
 }
 
+const SLIDER_CONSTANTS = {
+  max: CONSTANTS.manSalaryPerHour,
+  min: CONSTANTS.minSalaryPerHour,
+  step: 1
+};
+
 const PerHourSlider: FunctionComponent<PerHourSliderProps> = ({ value, setValue }): JSX.Element => {
+  const marks = [
+    {
+      value: SLIDER_CONSTANTS.min,
+      label: abbreviatedCurrency(SLIDER_CONSTANTS.min)
+    },
+    {
+      value: SLIDER_CONSTANTS.max,
+      label: abbreviatedCurrency(SLIDER_CONSTANTS.max)
+    }
+  ];
+
   const handleChange = (event: Event, newValue: number | number[]) => {
     if (typeof newValue === "number") {
       setValue(newValue);
@@ -18,19 +36,18 @@ const PerHourSlider: FunctionComponent<PerHourSliderProps> = ({ value, setValue 
   };
 
   return (
-    <>
+    <Box sx={{ pl: 2, pr: 2, mt: 2 }}>
       <Slider
-        sx={{ mb: 3, mt: 3 }}
         value={value}
-        min={1}
-        step={1}
-        max={constants.MAX_PER_HOUR}
+        min={SLIDER_CONSTANTS.min}
+        step={SLIDER_CONSTANTS.step}
+        max={SLIDER_CONSTANTS.max}
         onChange={handleChange}
         valueLabelFormat={abbreviatedCurrency(value)}
-        valueLabelDisplay="auto"
         aria-labelledby="per-hour-slider"
+        marks={marks}
       />
-    </>
+    </Box>
   );
 };
 

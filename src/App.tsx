@@ -1,6 +1,7 @@
 import { Alert, Container, Typography } from "@mui/material";
 import { FunctionComponent, useContext } from "react";
 
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import { BillDataContext, BillDataContextProvider } from "./contexts/BillDataContext";
@@ -26,6 +27,7 @@ const App: FunctionComponent = (): JSX.Element => {
       <Container sx={{ mt: 10 }} component="main" maxWidth="md">
         <AppContent />
       </Container>
+      <Footer />
     </BillDataContextProvider>
   );
 };
