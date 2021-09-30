@@ -36,7 +36,7 @@ const PerHourSlider: FunctionComponent<PerHourSliderProps> = ({ value, setValue 
   };
 
   return (
-    <Box sx={{ pl: 2, pr: 2, mt: 2 }}>
+    <Box sx={{ pl: 3, pr: 3, mt: 2 }}>
       <Slider
         value={value}
         min={SLIDER_CONSTANTS.min}

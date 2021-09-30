@@ -24,7 +24,7 @@ const App: FunctionComponent = (): JSX.Element => {
   return (
     <BillDataContextProvider>
       <Header />
-      <Container sx={{ mt: 10 }} component="main" maxWidth="md">
+      <Container sx={{ mt: 10 }} component="main" maxWidth="lg">
         <AppContent />
       </Container>
       <Footer />
