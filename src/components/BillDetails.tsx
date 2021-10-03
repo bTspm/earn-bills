@@ -18,7 +18,7 @@ const BillDetails: FunctionComponent<BillDetailsProps> = ({ billionaire }): JSX.
     <Card>
       <Grid container sx={{ p: 2 }} spacing={2}>
         <Grid item md={5} sm={12}>
-          <CardMedia component="img" image={billionaire.squareImage} alt="Paella dish" />
+          <CardMedia height="auto" width="100%" component="img" image={billionaire.squareImage} alt="Paella dish" />
         </Grid>
 
         <Grid item md={7} sm={12}>
