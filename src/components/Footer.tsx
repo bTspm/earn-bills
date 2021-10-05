@@ -28,6 +28,9 @@ export default function Footer(): JSX.Element {
         }{" "}
         for Data Source
       </Typography>
+
+      <div className="powr-hit-counter" id="da74fe77_1633465499" />
+      <script src="https://www.powr.io/powr.js?platform=react" />
     </>
   );
 }
