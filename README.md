@@ -21,11 +21,15 @@ $ git clone https://github.com/bTspm/earn-bills.git
 ```sh
 $ cd earn-bills
 ```
-3. Start Server.
+3. Install packages
+```sh
+$ npm install
+```
+4. Start Server.
 ```sh
 $ npm start
 ```
-4. Navigate to [http://localhost:3000](http://localhost:3000)
+5. Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
