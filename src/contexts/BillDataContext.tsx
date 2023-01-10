@@ -48,7 +48,7 @@ export const BillDataContextProvider = ({ children }: BillDataContextProviderPro
   useEffect(() => {
     function fetchBillData() {
       axios
-        .get("https://forbes400.herokuapp.com/api/forbes400/")
+        .get("https://forbes400.onrender.com/api/forbes400/")
         .then((response) => {
           const data = response.data.map((datum: BillDatum) => {
             datum.finalWorth = Number((datum.finalWorth * BILLION_MULTIPLIER).toFixed(CONSTANTS.defaultDecimals));
