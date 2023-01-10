@@ -1,7 +1,7 @@
 
 ## Earn Bills
 Calculate how many years it takes earn net-worth of the top 400 Forbes billionaires.
-- Demo - [https://earn-bills.herokuapp.com/](https://earn-bills.herokuapp.com/)
+- Demo - [https://earn-bills.netlify.app/](https://earn-bills.netlify.app/)
 
 ## Tech/framework used
 <b>Built with</b>
